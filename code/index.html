@@ -307,9 +307,9 @@ tbody td { padding: 7px 9px; white-space: nowrap; }
   <div class="drop-zone" id="drop-zone">
     <span class="drop-icon">📂</span>
     <div class="drop-main">Drop your CSV file here</div>
-    <div class="drop-sub">or <span onclick="document.getElementById('file-input').click()">choose a file</span></div>
-    <input type="file" id="file-input" accept=".csv">
+    <div class="drop-sub">or click anywhere here to browse</div>
   </div>
+  <input type="file" id="file-input" accept=".csv" style="display:none">
 
   <div class="schema-card">
     <h4>Required CSV Columns</h4>
@@ -787,6 +787,11 @@ document.getElementById('file-input').addEventListener('change', e => {
 });
 
 const dz = document.getElementById('drop-zone');
+const fi = document.getElementById('file-input');
+
+// Clicking anywhere on the drop zone opens file picker
+dz.addEventListener('click', () => fi.click());
+
 dz.addEventListener('dragover', e => { e.preventDefault(); dz.classList.add('drag-over'); });
 dz.addEventListener('dragleave', () => dz.classList.remove('drag-over'));
 dz.addEventListener('drop', e => {
