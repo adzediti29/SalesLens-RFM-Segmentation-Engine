@@ -31,7 +31,7 @@
 
 | Dashboard Overview |
 |---|
-| ![Overview](screenshots/RFM Dashboard.png) |
+| ![Overview](screenshots/RFM_Dashboard.png) |
 
 ---
 
